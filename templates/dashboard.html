@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PocketSmart AI - Dashboard</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+        }
+
+        .navbar {
+            background: #1f2937;
+            color: white;
+            padding: 18px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            margin: 0;
+        }
+
+        .container {
+            padding: 40px;
+        }
+
+        .welcome {
+            margin-bottom: 30px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 16px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+        }
+
+        .card a:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <h1>PocketSmart AI</h1>
+        <a href="/" style="color:white;">Home</a>
+    </nav>
+
+    <main class="container">
+
+        <section class="welcome">
+            <h2>Welcome to PocketSmart AI 👋</h2>
+            <p>Your smart budget and recommendation assistant.</p>
+        </section>
+
+        <section class="cards">
+
+            <div class="card">
+                <h2>🏠 Home Planner</h2>
+                <p>Plan your home interior according to your budget.</p>
+                <a href="/home-planner">Open Planner</a>
+            </div>
+
+            <div class="card">
+                <h2>🎉 Party Planner</h2>
+                <p>Plan your party while keeping your budget in mind.</p>
+                <a href="/party-planner">Open Planner</a>
+            </div>
+
+            <div class="card">
+                <h2>💎 Jewelry Planner</h2>
+                <p>Explore jewelry recommendations based on your budget.</p>
+                <a href="/jewelry-planner">Open Planner</a>
+            </div>
+
+            <div class="card">
+                <h2>🤖 AI Recommendations</h2>
+                <p>Get smart recommendations from PocketSmart AI.</p>
+                <a href="/recommendations">Get Recommendations</a>
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

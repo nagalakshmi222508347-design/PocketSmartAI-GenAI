@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block content %}
+<h2>Recommendation History</h2><div class="card">
+{% if rows %}<table><tr><th>#</th><th>Category</th><th>Budget</th><th>Date</th><th></th></tr>
+{% for r in rows %}<tr><td>{{ r.id }}</td><td>{{ r.category }}</td><td>₹{{ '{:,.0f}'.format(r.budget) }}</td><td>{{ r.created }}</td>
+<td><a href="/recommendations-details/{{ r.id }}">View</a></td></tr>{% endfor %}</table>
+{% else %}<p class="muted">No history yet.</p>{% endif %}</div>
+{% endblock %}

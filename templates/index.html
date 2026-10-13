@@ -1,0 +1,14 @@
+{% extends "base.html" %}{% block content %}
+<section class="hero"><h1>Your Smart Budget & Recommendation Assistant</h1>
+<p>Plan your home, party or jewelry purchases within budget using Gemini AI.</p>
+<a class="btn light" href="{{ '/dashboard' if user else '/register' }}">Get Started</a></section>
+<div class="grid">
+<div class="card"><h3>🏠 Home Interior</h3><p class="muted">Lights, fans, tables & more from IKEA, Amazon, Flipkart.</p><a href="/home-planner">Plan now →</a></div>
+<div class="card"><h3>🎉 Party Planner</h3><p class="muted">Catering, decor & stay across Swiggy, Zomato, OYO.</p><a href="/party-planner">Plan now →</a></div>
+<div class="card"><h3>💎 Jewelry</h3><p class="muted">Occasion-matched picks; upload your outfit for colour matching.</p><a href="/jewelry-planner">Plan now →</a></div></div>
+<h2>Testimonials</h2>
+<div class="grid">
+<div class="card">"Furnished my flat under budget in one evening!"<br><b>— Priya S.</b></div>
+<div class="card">"The party plan saved me ₹8,000."<br><b>— Arjun K.</b></div>
+<div class="card">"Perfect jewelry match for my saree."<br><b>— Meena R.</b></div></div>
+{% endblock %}

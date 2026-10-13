@@ -1,0 +1,10 @@
+{% extends "base.html" %}{% block content %}
+<form class="card" method="post" action="/generate-party"><h2>🎉 Party Budget Planner</h2>
+{% if error %}<div class="alert err">{{ error }}</div>{% endif %}
+<label>Total budget (₹)</label><input type="number" name="budget" min="1000" required>
+<label>Number of guests</label><input type="number" name="guests" min="1" required>
+<label>Event type</label><select name="event_type"><option>Birthday</option><option>Wedding</option><option>Corporate</option><option>Anniversary</option><option>Get-together</option></select>
+<label>Venue</label><select name="venue"><option>Home</option><option>Banquet hall</option><option>Restaurant</option><option>Hotel / OYO stay</option><option>Outdoor</option></select>
+<label>City</label><input name="city" value="Chennai">
+<br><button class="btn">Get Recommendations</button></form>
+{% endblock %}

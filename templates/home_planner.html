@@ -1,0 +1,17 @@
+{% extends "base.html" %}{% block content %}
+<form class="card" method="post" action="/generate-home"><h2>🏠 Home Interior Budget Planner</h2>
+{% if error %}<div class="alert err">{{ error }}</div>{% endif %}
+<label>Total budget (₹)</label><input type="number" name="budget" min="1000" required>
+<label>Style</label><select name="style"><option>Modern</option><option>Minimalist</option><option>Traditional</option><option>Scandinavian</option><option>Boho</option></select>
+<label>Rooms & quantities</label>
+<div class="muted row"><span>Room</span><span>Lights</span><span>Fans</span><span>Dining tables</span></div>
+<div id="rooms"></div>
+<button type="button" class="btn small" onclick="addRoom()">+ Add room</button><br><br>
+<button class="btn">Get Recommendations</button></form>
+<script>
+function addRoom(){const d=document.createElement('div');d.className='row';
+d.innerHTML=`<select name="room"><option>Living Room</option><option>Kitchen</option><option>Bedroom</option><option>Dining Room</option><option>Study</option></select>
+<input type="number" name="lights" min="0" value="2"><input type="number" name="fans" min="0" value="1"><input type="number" name="tables" min="0" value="0">`;
+document.getElementById('rooms').appendChild(d);}
+addRoom();
+</script>{% endblock %}

@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block content %}
+<form class="card narrow" method="post" action="/login"><h2>Login</h2>
+{% if error %}<div class="alert err">{{ error }}</div>{% endif %}{% if msg %}<div class="alert okmsg">{{ msg }}</div>{% endif %}
+<label>Username</label><input name="username" required><label>Password</label><input type="password" name="password" required>
+<br><button class="btn">Login</button><p class="muted">New here? <a href="/register">Register</a></p></form>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}{% block content %}
+<h2>{{ category }} Recommendations <span class="badge">{{ data.source }}</span></h2>
+<p>{{ data.summary }}</p>
+<div class="stats"><div class="stat">Budget<b>₹{{ '{:,.0f}'.format(data.budget) }}</b></div>
+<div class="stat">Estimated total<b>₹{{ '{:,.0f}'.format(data.total) }}</b></div>
+<div class="stat">Remaining<b style="color:{{ 'var(--bad)' if data.over_budget else 'var(--ok)' }}">₹{{ '{:,.0f}'.format(data.remaining) }}</b></div></div>
+{% if data.over_budget %}<div class="alert err">Estimated total is slightly over budget — consider dropping one item.</div>{% endif %}
+<div class="card" style="overflow-x:auto"><table>
+<tr><th>Category</th><th>Item</th><th>Platform</th><th>Price</th><th>Why</th><th></th></tr>
+{% for i in data['items'] %}<tr><td>{{ i.category }}</td><td><b>{{ i.name }}</b></td><td>{{ i.platform }}</td>
+<td>₹{{ '{:,.0f}'.format(i.price) }}</td><td class="muted">{{ i.reason }}</td>
+<td><a class="btn small" target="_blank" rel="noopener" href="{{ i.link }}">View</a></td></tr>{% endfor %}</table></div>
+{% if data.tips %}<div class="card" style="margin-top:18px"><h3>💡 Tips</h3><ul>{% for t in data.tips %}<li>{{ t }}</li>{% endfor %}</ul></div>{% endif %}
+<p><a href="/dashboard">← Back to dashboard</a></p>
+{% endblock %}
